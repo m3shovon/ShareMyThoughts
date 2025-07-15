@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { ImageIcon, X, Sparkles } from "lucide-react"
+import { ImageIcon, X, Waves } from "lucide-react"
 import { TextEditor } from "./text-editor"
 import { apiClient } from "@/lib/api"
 import { useAuth } from "@/hooks/use-auth"
@@ -66,8 +66,8 @@ export function CreatePostModal({ onPostCreated, trigger }: CreatePostModalProps
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         {trigger || (
-          <Button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold transition-all duration-300 transform hover:scale-105">
-            <Sparkles className="h-4 w-4 mr-2" />
+          <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold transition-all duration-300 transform hover:scale-105">
+            <Waves className="h-4 w-4 mr-2" />
             Create Post
           </Button>
         )}
@@ -75,16 +75,16 @@ export function CreatePostModal({ onPostCreated, trigger }: CreatePostModalProps
       <DialogContent className="max-w-2xl bg-gray-800 border-gray-700">
         <DialogHeader>
           <DialogTitle className="text-white flex items-center space-x-2">
-            <Sparkles className="h-5 w-5 text-purple-400" />
+            <Waves className="h-5 w-5 text-blue-400" />
             <span>Create Post</span>
           </DialogTitle>
         </DialogHeader>
 
         <div className="space-y-4">
           <div className="flex items-center space-x-3">
-            <Avatar className="border-2 border-purple-500">
+            <Avatar className="border-2 border-blue-500">
               <AvatarImage src="/placeholder-user.jpg" alt={user?.username} />
-              <AvatarFallback className="bg-gradient-to-r from-purple-500 to-pink-500 text-white">
+              <AvatarFallback className="bg-gradient-to-r from-blue-600 to-blue-500 text-white">
                 {user?.first_name?.[0]}
                 {user?.last_name?.[0]}
               </AvatarFallback>
@@ -141,7 +141,7 @@ export function CreatePostModal({ onPostCreated, trigger }: CreatePostModalProps
               <Button
                 onClick={handleSubmit}
                 disabled={(!content.trim() && !image) || isLoading}
-                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold transition-all duration-300 transform hover:scale-105"
+                className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold transition-all duration-300 transform hover:scale-105"
               >
                 {isLoading ? (
                   <div className="flex items-center space-x-2">

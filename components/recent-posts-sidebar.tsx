@@ -137,7 +137,7 @@ export function RecentPostsSidebar() {
             {post.image && (
               <div className="mb-2">
                 <Image
-                  src={`http://localhost:8000${post.image}`}
+                  src={`${post.image}`}
                   alt="Post image"
                   width={200}
                   height={120}

@@ -10,7 +10,7 @@
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
+    --primary: 214.3 83.2% 51.0%;
     --primary-foreground: 222.2 84% 4.9%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -22,7 +22,7 @@
     --destructive-foreground: 210 40% 98%;
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 94.0%;
+    --ring: 214.3 83.2% 51.0%;
     --radius: 0.5rem;
   }
 }
@@ -32,7 +32,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-gray-900 text-foreground;
   }
 }
 
@@ -63,13 +63,21 @@
   @apply text-gray-500;
 }
 
-/* Gradient backgrounds */
+/* Navy blue gradient backgrounds */
 .gradient-bg {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
 }
 
 .gradient-card {
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+}
+
+.gradient-button {
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #3b82f6 100%);
+}
+
+.gradient-button:hover {
+  background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #60a5fa 100%);
 }
 
 /* Animation classes */
@@ -92,9 +100,9 @@
   animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Vibrant button styles */
+/* Navy blue button styles */
 .btn-vibrant {
-  @apply bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105;
+  @apply bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105;
 }
 
 .btn-vibrant-secondary {

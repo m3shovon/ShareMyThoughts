@@ -128,9 +128,15 @@ export function TextEditor({ value, onChange, placeholder = "What's on your mind
           contentEditable
           onInput={handleInput}
           className="min-h-[120px] p-4 outline-none text-white bg-gray-800 focus:bg-gray-750"
-          style={{ whiteSpace: "pre-wrap" }}
+          style={{
+            whiteSpace: "pre-wrap",
+            direction: "ltr",
+            textAlign: "left",
+            unicodeBidi: "normal",
+          }}
           data-placeholder={placeholder}
-          dangerouslySetInnerHTML={{ __html: value }}
+          // dangerouslySetInnerHTML={{ __html: value }}
+          suppressContentEditableWarning={true}
         />
       </CardContent>
     </Card>

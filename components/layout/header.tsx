@@ -10,7 +10,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Sparkles, LogOut, User, Settings } from "lucide-react"
+import { Waves, LogOut, User, Settings, Edit } from "lucide-react"
 import { useAuth } from "@/hooks/use-auth"
 
 export function Header() {
@@ -28,14 +28,18 @@ export function Header() {
     }
   }
 
+  const handleEditProfileClick = () => {
+    router.push("/profile/edit")
+  }
+
   return (
     <header className="bg-gray-900/95 backdrop-blur-lg border-b border-gray-700 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2 cursor-pointer" onClick={() => router.push("/events")}>
-            <Sparkles className="h-8 w-8 text-purple-400" />
-            <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <Waves className="h-8 w-8 text-blue-400" />
+            <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
               SocialVibe
             </span>
           </div>
@@ -63,9 +67,9 @@ export function Header() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="relative h-10 w-10 rounded-full">
-                  <Avatar className="h-10 w-10 border-2 border-purple-500">
+                  <Avatar className="h-10 w-10 border-2 border-blue-500">
                     <AvatarImage src="/placeholder-user.jpg" alt={user?.username} />
-                    <AvatarFallback className="bg-gradient-to-r from-purple-500 to-pink-500 text-white">
+                    <AvatarFallback className="bg-gradient-to-r from-blue-600 to-blue-500 text-white">
                       {user?.first_name?.[0]}
                       {user?.last_name?.[0]}
                     </AvatarFallback>
@@ -88,6 +92,13 @@ export function Header() {
                 >
                   <User className="mr-2 h-4 w-4" />
                   Profile
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  className="text-gray-300 hover:text-white hover:bg-gray-700"
+                  onClick={handleEditProfileClick}
+                >
+                  <Edit className="mr-2 h-4 w-4" />
+                  Edit Profile
                 </DropdownMenuItem>
                 <DropdownMenuItem className="text-gray-300 hover:text-white hover:bg-gray-700">
                   <Settings className="mr-2 h-4 w-4" />

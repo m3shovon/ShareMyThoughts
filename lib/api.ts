@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:8000/api"
+const API_BASE_URL = "http://localhost:8888/api"
 
 class ApiClient {
   private token: string | null = null
@@ -25,13 +25,13 @@ class ApiClient {
 
   private async request(endpoint: string, options: RequestInit = {}) {
     const url = `${API_BASE_URL}${endpoint}`
-    const headers: HeadersInit = {
+    const headers: Record<string, string> = {
       "Content-Type": "application/json",
-      ...options.headers,
+      ...(options.headers as Record<string, string>),
     }
 
     if (this.token) {
-      headers.Authorization = `Token ${this.token}`
+      headers["Authorization"] = `Token ${this.token}`
     }
 
     const response = await fetch(url, {

@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Eye, EyeOff, LogIn, Sparkles } from "lucide-react"
+import { Eye, EyeOff, LogIn, Waves } from "lucide-react"
 import { useAuth } from "@/hooks/use-auth"
 
 export function LoginForm() {
@@ -46,13 +46,13 @@ export function LoginForm() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-blue-900 to-slate-900 p-4">
       <div className="w-full max-w-md">
         <Card className="bg-gray-800/50 backdrop-blur-lg border-gray-700 shadow-2xl">
           <CardHeader className="text-center space-y-2">
             <div className="flex items-center justify-center space-x-2">
-              <Sparkles className="h-8 w-8 text-purple-400" />
-              <CardTitle className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <Waves className="h-8 w-8 text-blue-400" />
+              <CardTitle className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
                 SocialVibe
               </CardTitle>
             </div>
@@ -77,7 +77,7 @@ export function LoginForm() {
                   required
                   value={formData.username}
                   onChange={handleChange}
-                  className="bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-purple-500 focus:ring-purple-500"
+                  className="bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500"
                   placeholder="Enter your username"
                 />
               </div>
@@ -94,7 +94,7 @@ export function LoginForm() {
                     required
                     value={formData.password}
                     onChange={handleChange}
-                    className="bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-purple-500 focus:ring-purple-500 pr-10"
+                    className="bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500 pr-10"
                     placeholder="Enter your password"
                   />
                   <Button
@@ -112,7 +112,7 @@ export function LoginForm() {
               <Button
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105"
+                className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105"
               >
                 {isLoading ? (
                   <div className="flex items-center space-x-2">
@@ -133,7 +133,7 @@ export function LoginForm() {
                 Don't have an account?{" "}
                 <Button
                   variant="link"
-                  className="text-purple-400 hover:text-purple-300 p-0"
+                  className="text-blue-400 hover:text-blue-300 p-0"
                   onClick={() => router.push("/register")}
                 >
                   Sign up
