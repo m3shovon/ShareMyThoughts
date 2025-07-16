@@ -153,8 +153,8 @@ export function EnhancedPost({ post, onUpdate }: PostProps) {
                 <Image
                   src={`${post.image}`}
                   alt="Post image"
-                  // width={400}
-                  // height={200}
+                  width={400}
+                  height={200}
                   className="w-[400px] h-[200px] rounded-lg object-cover border border-gray-700 hover:border-blue-500 transition-colors"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors rounded-lg flex items-center justify-center">

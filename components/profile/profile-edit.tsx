@@ -98,10 +98,9 @@ export function ProfileEdit() {
 
       // Add text fields
       Object.entries(formData).forEach(([key, value]) => {
-        if (value) {
-          profileFormData.append(key, value)
-        }
+        profileFormData.append(key, value !== undefined && value !== null ? value : "")
       })
+
 
       // Add files
       if (avatarFile) {

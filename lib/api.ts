@@ -139,11 +139,32 @@ class ApiClient {
     return this.request(`/users/${userId}/profile/`)
   }
 
-  async updateProfile(profileData: any) {
-    return this.request("/profile/", {
+  // async updateProfile(profileData: any) {
+  //   return this.request("/profile/", {
+  //     method: "PATCH",
+  //     body: JSON.stringify(profileData),
+  //   })
+  // }
+  async updateProfile(profileFormData: FormData) {
+    const url = `${API_BASE_URL}/profile/`
+    const headers: HeadersInit = {}
+
+    if (this.token) {
+      headers.Authorization = `Token ${this.token}`
+    }
+
+    const response = await fetch(url, {
       method: "PATCH",
-      body: JSON.stringify(profileData),
+      headers, // Do NOT set Content-Type manually
+      body: profileFormData,
     })
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => null)
+      throw new Error(errorData?.detail || `HTTP error! status: ${response.status}`)
+    }
+
+    return response.json()
   }
 
   // Recent posts for sidebar
