@@ -75,7 +75,7 @@ export function RegisterForm() {
             <div className="flex items-center justify-center space-x-2">
               <Waves className="h-8 w-8 text-blue-400" />
               <CardTitle className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                SocialVibe
+                Vlogspot
               </CardTitle>
             </div>
             <CardDescription className="text-gray-300">Create your account and join the community</CardDescription>

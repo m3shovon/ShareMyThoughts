@@ -122,7 +122,7 @@ export default function EventsPage() {
         {/* Main Content */}
         <div className="flex-1 max-w-2xl space-y-6">
           {/* Welcome Card */}
-          <Card className="bg-gradient-to-r from-blue-600 to-blue-500 border-none">
+          {/* <Card className="bg-gradient-to-r from-blue-600 to-blue-500 border-none">
             <CardContent className="p-6">
               <div className="flex items-center space-x-3">
                 <Waves className="h-8 w-8 text-white" />
@@ -132,7 +132,7 @@ export default function EventsPage() {
                 </div>
               </div>
             </CardContent>
-          </Card>
+          </Card> */}
 
           {/* Create Post */}
           <Card className="bg-gray-800 border-gray-700">

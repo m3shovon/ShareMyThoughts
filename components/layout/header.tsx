@@ -10,7 +10,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Waves, LogOut, User, Settings, Edit } from "lucide-react"
+import { Waves, LogOut, User, Settings, Edit, Hash } from "lucide-react"
+
 import { useAuth } from "@/hooks/use-auth"
 
 export function Header() {
@@ -38,9 +39,10 @@ export function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2 cursor-pointer" onClick={() => router.push("/events")}>
-            <Waves className="h-8 w-8 text-blue-400" />
+            {/* <Waves className="h-8 w-8 text-blue-400" /> */}
+            <Hash className="h-8 w-8 text-blue-400"  />
             <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              SocialVibe
+              Vlogspot
             </span>
           </div>
 
